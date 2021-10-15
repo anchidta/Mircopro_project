@@ -2,8 +2,8 @@
 .syntax unified
 @if dont understand address please look memory map 
 .equ GPIOA_CRL, 0x40010800 @Port configuration register low
-.equ GPIOA_ODR, 0x4001080C @GPIO-D Output Data register
-.equ RCC_APB2ENR, 0x40021018 @RCC AHB1 peripheral clock enable register
+.equ GPIOA_ODR, 0x4001080C @GPIO-A Output Data register
+.equ RCC_APB2ENR, 0x40021018 @RCC APB2 peripheral clock enable register
 .equ STACKINIT, 0x20005000
 .equ LEDDELAY, 2000000 
 .text

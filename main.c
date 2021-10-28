@@ -55,7 +55,6 @@ int main(void)
 {
   int i = 0;// Define variable type GPIO
   GPIO_InitTypeDef GPIO_InitStruct_num;
-  //GPIO_InitTypeDef GPIO_InitStruct_on_off;
   RCC_DeInit();
   int count = 0;
   int status = 1;
@@ -69,103 +68,69 @@ int main(void)
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);//72MHZ
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
-  GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);// Configure PA as push-pull output
+  GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
   GPIO_InitStruct_num.GPIO_Pin= GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12
-  |GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
-  GPIO_InitStruct_num.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStruct_num.GPIO_Mode = GPIO_Mode_Out_PP;
+  |GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;//use GPIOB 0,1,3,4,8,9,10,11,12,13,14,15
+  GPIO_InitStruct_num.GPIO_Speed = GPIO_Speed_50MHz;//50Mhz
+  GPIO_InitStruct_num.GPIO_Mode = GPIO_Mode_Out_PP;// Configure PA as push-pull output
   GPIO_Init(GPIOB, &GPIO_InitStruct_num);
-  /* Infinite loop */
-  while (1)
-  {
-  //count++;
   GPIO_Write(GPIOB, 0x001B);
   GPIO_ResetBits(GPIOB, GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_3|GPIO_Pin_4);// on digit 1-4
   GPIO_WriteBit(GPIOB, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10, Bit_SET);//set to be 7
   my_delay(10000000);
-  // status == 1;
-  GPIO_SetBits(GPIOB, GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_3|GPIO_Pin_4);
-  my_delay(10000000);
+  /* Infinite loop */
+  while (1)
+  {
+  
+  GPIO_Write(GPIOB, 0x001B);//reset
 
   status = 200;
   while(status>0)//0 6 3 1
   {
-  GPIO_Write(GPIOB, 0x3F19);
+  GPIO_Write(GPIOB, 0x3F19);//0
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x7D1A);
+  GPIO_Write(GPIOB, 0x7D1A);//6
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x4F13);
+  GPIO_Write(GPIOB, 0x4F13);//3
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x060B);
+  GPIO_Write(GPIOB, 0x060B);//1
   my_delay(10000);
   status--;
   }
-  GPIO_Write(GPIOB, 0x001B);
-  my_delay(10000000);
 
   status = 200;
   while(status>0)//6 2 1 0
   {
-  GPIO_Write(GPIOB, 0x7D19);
+  GPIO_Write(GPIOB, 0x7D19);//6
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x5B1A);
+  GPIO_Write(GPIOB, 0x5B1A);//2
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x0613);
+  GPIO_Write(GPIOB, 0x0613);//1
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x3F0B);
+  GPIO_Write(GPIOB, 0x3F0B);//0
   my_delay(10000);
   status--; 
   }
-  GPIO_Write(GPIOB, 0x001B);
-  my_delay(10000000);
 
   status = 200;
   while(status>0)// 5 9 4 0
   {
-  GPIO_Write(GPIOB, 0x6D19);
+  GPIO_Write(GPIOB, 0x6D19);//5
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x6F1A);
+  GPIO_Write(GPIOB, 0x6F1A);//9
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x6613);
+  GPIO_Write(GPIOB, 0x6613);//4
   my_delay(10000);
-  GPIO_Write(GPIOB, 0x3F0B);
+  GPIO_Write(GPIOB, 0x3F0B);//0
   my_delay(10000);
   status--;
   }
-  GPIO_Write(GPIOB, 0x001B);
-  my_delay(10000000);
+
 
   GPIO_Write(GPIOB, 0x4000);// - - - -
   my_delay(10000000);
 
-  GPIO_Write(GPIOB, 0x001B);
-  my_delay(10000000);
+ 
   }
   }
-  /**
-  *  IMPORTANT NOTE!
-  *  The symbol VECT_TAB_SRAM needs to be defined when building the project
-  *  if code has been located to RAM and interrupts are used. 
-  *  Otherwise the interrupt table located in flash will be used.
-  *  See also the <system_*.c> file and how the SystemInit() function updates 
-  *  SCB->VTOR register.  
-  *  E.g.  SCB->VTOR = 0x20000000;  
-  */
-
-
-  /* TODO - Add your application code here */
-
-  /* Infinite loop */
-
-/**
-  * @brief  Reports the name of the source file and the source line number
-  *   where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
-
-
-
-
-
+  

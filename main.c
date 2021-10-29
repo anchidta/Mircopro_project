@@ -83,45 +83,33 @@ int main(void)
   
   GPIO_Write(GPIOB, 0x001B);//reset
 
-  status = 200;
+  status = 900000;
   while(status>0)//0 6 3 1
   {
   GPIO_Write(GPIOB, 0x3F19);//0
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x7D1A);//6
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x4F13);//3
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x060B);//1
-  my_delay(10000);
   status--;
   }
 
-  status = 200;
+  status = 900000;
   while(status>0)//6 2 1 0
   {
   GPIO_Write(GPIOB, 0x7D19);//6
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x5B1A);//2
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x0613);//1
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x3F0B);//0
-  my_delay(10000);
   status--; 
   }
 
-  status = 200;
+  status = 900000;
   while(status>0)// 5 9 4 0
   {
   GPIO_Write(GPIOB, 0x6D19);//5
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x6F1A);//9
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x6613);//4
-  my_delay(10000);
   GPIO_Write(GPIOB, 0x3F0B);//0
-  my_delay(10000);
   status--;
   }
 

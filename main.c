@@ -56,8 +56,7 @@ int main(void)
   int i = 0;// Define variable type GPIO
   GPIO_InitTypeDef GPIO_InitStruct_num;
   RCC_DeInit();
-  int count = 0;
-  int status = 1;
+  int status = 0;
   RCC_HSEConfig(RCC_HSE_ON);
   RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9); // PLL ใช้ HSE แบบไม่หารและคูณ 9 เท่า
   RCC_PLLCmd(ENABLE);//เปิดใช้งาน PLL

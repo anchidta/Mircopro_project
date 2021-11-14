@@ -60,6 +60,8 @@ int main(void)
   A_4="Do you know notthing right";
   unsigned char *A_5 ;
   A_5="How many points that we should get today";
+  unsigned char *A_6 ;
+  A_6="0/";
 
   unsigned char msg_con[45] ;
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_USART1, ENABLE);

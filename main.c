@@ -148,6 +148,14 @@ int main(void)
               output(msg);
               null_array(msg_con,45);
             }
+	    else if( (memcmp(msg_con,A_6,15) > 0 ))
+	    {
+	      USART_sendC('\n');
+	      USART_sendC('\r');
+	      msg = "I don't understand\0";
+	      output(msg);
+	      null_array(msg_con,15);
+	    }
 
 			 USART_sendC('\n');
 			 USART_sendC('\r');

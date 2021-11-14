@@ -1,11 +1,14 @@
-# Mircopro_project
+# Chatbot_project
 ## In Main.C code 
 Serial communication with bluepill board(STM32F103C8T6 board by Dr.K)
 use to communication with putty
 
 The Code hard to understand? Great!!!
-Please read about USART first from http://web.engr.oregonstate.edu/~traylor/ece473/lectures/uart.pdf
-or read from lecture Dr.K.
+
+
+Please read about USART first from http://web.engr.oregonstate.edu/~traylor/ece473/lectures/uart.pdf or read from lecture Dr.K.
+
+
 ++Code expain++
 
 Function Part:
@@ -69,6 +72,29 @@ USART config
   USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
   USART_Init(USART1, &USART_InitStructure);
 ```
+Variable config:
+```c
+  int i = 0;
+  // Define variable type GPIO
+  unsigned char sData=0x20;
+  unsigned char *msg ;
+
+  unsigned char *msg_con1 ;
+  unsigned char *A_1 ;
+  A_1 ="Why me";
+  unsigned char *A_2 ;
+  A_2 ="What must we do today";
+  unsigned char *A_3 ;
+  A_3 ="What is the topic";
+  unsigned char *A_4 ;
+  A_4="Do you know notthing right";
+  unsigned char *A_5 ;
+  A_5="How many points that we should get today";
+  unsigned char *A_6 ;
+  A_6="0/";
+  unsigned char msg_con[45] ;
+```
+
 Main Code:
 open part
 ```c

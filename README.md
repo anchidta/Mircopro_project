@@ -189,4 +189,5 @@ Chat bot part
 
   }
 ```
+For more about memcmp function(use for compare unsigned char) :https://www.tutorialspoint.com/c_standard_library/c_function_memcmp.htm
 

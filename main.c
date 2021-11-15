@@ -3,12 +3,6 @@
 #include "stm32f10x_conf.h"
 #include <stdio.h>
 
-void my_delay(unsigned int count)
-{
-while(count>0)
-{
-count--; }
-}
 
 void output(unsigned char *word)
 {
@@ -76,7 +70,7 @@ int main(void)
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;// Configure PA as push-pull output
   GPIO_Init(GPIOA, &GPIO_InitStruct);
   USART_Cmd(USART1, ENABLE);
-  USART_InitStructure.USART_BaudRate = 115200;
+  USART_InitStructure.USART_BaudRate = 19200;
   USART_InitStructure.USART_WordLength = USART_WordLength_8b;
   USART_InitStructure.USART_StopBits = USART_StopBits_1;
   USART_InitStructure.USART_Parity = USART_Parity_No;

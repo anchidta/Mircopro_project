@@ -190,3 +190,12 @@ Chat bot part
 ```
 For more about memcmp function(use for compare unsigned char) :https://www.tutorialspoint.com/c_standard_library/c_function_memcmp.htm
 
+Putty config:
+
+![alt text](https://github.com/anchidta/Mircopro_project/blob/main/putty.png?raw=true)
+
+Chat bot interface:
+
+![alt text](https://github.com/anchidta/Mircopro_project/blob/main/chatbot.png?raw=true)
+
+

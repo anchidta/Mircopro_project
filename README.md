@@ -18,7 +18,7 @@ Send data to pc
 ```c
 void USART_sendC(unsigned char c)
 {
-  while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);
+  while(USART_GetFlagStatus(USART1, USART_FLAG_TXE)==RESET);//Check flag tranmission
   USART_SendData(USART1,(unsigned char) c); 
 }
 ```
@@ -28,7 +28,7 @@ Get data from pc:
 ```c
 unsigned char USART_getC()
 {
-  while(USART_GetFlagStatus(USART1, USART_FLAG_RXNE)==RESET);
+  while(USART_GetFlagStatus(USART1, USART_FLAG_RXNE)==RESET);//Check flag receive
   return(USART_ReceiveData(USART1)); 
 }
 ```
@@ -36,7 +36,7 @@ unsigned char USART_getC()
 Clean array to be null:
 
 ```c
-void null_array(unsigned char *a, size_t size)
+void null_array(unsigned char *a, size_t size)//size_t = number of char ex. hello has 5 char use size_t is 5
 { 
    for(int i = 0; i < size; i++) 
       a[i] = 0; 
@@ -54,14 +54,14 @@ GPIO pin 9 and 10 config(Why we use this pin? Answer:Please look in circuit)
   GPIO_InitTypeDef GPIO_InitStruct;
   GPIO_InitStruct.GPIO_Pin= GPIO_Pin_9;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;//50Mhz
-  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP;// Configure PA as push-pull output
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_Init(GPIOA, &GPIO_InitStruct);
   GPIO_InitStruct.GPIO_Pin= GPIO_Pin_10;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;//50Mhz
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;// Configure PA as push-pull output
   GPIO_Init(GPIOA, &GPIO_InitStruct);
 ```
-USART config
+USART config##look in lecture Dr.K for more detail
 ```c
   USART_InitTypeDef USART_InitStructure;
   USART_Cmd(USART1, ENABLE);

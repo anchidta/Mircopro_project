@@ -57,7 +57,7 @@ int main(void)
   unsigned char *A_3 ;
   A_3 ="What is the topic";
   unsigned char *A_4 ;
-  A_4="Do you know notthing right";
+  A_4="Do you know nothing right";
   unsigned char *A_5 ;
   A_5="How many points that we should get today";
   unsigned char *A_6 ;
@@ -129,7 +129,7 @@ int main(void)
             {
               USART_sendC('\n');
               USART_sendC('\r');
-              msg =  "You must represent\0";
+              msg =  "You must present\0";
               output(msg);
               null_array(msg_con,45);
             }

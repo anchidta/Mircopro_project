@@ -76,7 +76,7 @@ GPIO pin 9 and 10 config(Why we use this pin? Answer:Please look in circuit)
   GPIO_Init(GPIOA, &GPIO_InitStruct);
   GPIO_InitStruct.GPIO_Pin= GPIO_Pin_10;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;//50Mhz
-  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;// Configure PA as push-pull output
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;// Configure PA as push-pull AF
   GPIO_Init(GPIOA, &GPIO_InitStruct);
 ```
 USART config##look in lecture Dr.K for more detail

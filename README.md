@@ -32,7 +32,7 @@ unsigned char USART_getC()
 }
 ```
 
-Clean array to br null:
+Clean array to be null:
 
 ```c
 void null_array(unsigned char *a, size_t size)
@@ -78,9 +78,8 @@ Variable config:
   // Define variable type GPIO
   unsigned char sData=0x20;
   unsigned char *msg ;
-
   unsigned char *msg_con1 ;
-  unsigned char *A_1 ;
+  unsigned char *A_1 ;//Answer sentence
   A_1 ="Why me";
   unsigned char *A_2 ;
   A_2 ="What must we do today";
@@ -92,7 +91,7 @@ Variable config:
   A_5="How many points that we should get today";
   unsigned char *A_6 ;
   A_6="0/";
-  unsigned char msg_con[45] ;
+  unsigned char msg_con[45] ; //Variable that Store Data from pc
 ```
 
 Main Code:

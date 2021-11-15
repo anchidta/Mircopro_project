@@ -1,7 +1,8 @@
 # Chatbot_project
 ## In Main.C code 
 Serial communication with bluepill board(STM32F103C8T6 board by Dr.K)
-use to communication with putty
+
+use to communication with putty(In Ubuntu 20.04)
 
 The Code hard to understand? Great!!!
 

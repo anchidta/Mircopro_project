@@ -42,6 +42,24 @@ void null_array(unsigned char *a, size_t size)//size_t = number of char ex. hell
       a[i] = 0; 
 } 
 ```
+
+Output:
+
+```c
+void output(unsigned char *word)
+{
+  unsigned char *msg ;
+  msg = word;
+  int i = 0;
+  while (msg[i] != '\0')
+   {
+     USART_sendC(msg[i]);
+     i++;
+   }
+
+}
+```
+
 Let go to Configurion part:
 RCC and GPIO clock enable
 ```c

@@ -100,8 +100,19 @@ open part
 ```c
   USART_sendC('\n');
   USART_sendC('\r');
-  msg =  "Please Press Any key board\0";
+  msg =  "Hello World\0";
   output(msg);
+  USART_sendC('\n');
+  USART_sendC('\r');
+  msg =  "Nice to meet you\0";
+  output(msg);
+  USART_sendC('\n');
+  USART_sendC('\r');
+  msg =  "I can chat with you\0";
+  output(msg);
+  USART_sendC('\n');
+  USART_sendC('\r');
+  USART_sendC('>');
 ```
 Chat bot part
 ```c
